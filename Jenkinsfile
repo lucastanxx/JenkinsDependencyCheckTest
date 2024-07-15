@@ -12,8 +12,8 @@ pipeline {
 
         stage('OWASP DependencyCheck') {
             steps {
-                // Note the inclusion of apiKey in additionalArguments using the NVD_API_KEY environment variable
-                dependencyCheck additionalArguments: '--apiKey $NVD_API_KEY --format HTML --format XML', odcInstallation: 'OWASP Dependency-Check Vulnerabilities'
+                // Correct the apiKey parameter to nvdApiKey
+                dependencyCheck additionalArguments: '--nvdApiKey $NVD_API_KEY --format HTML --format XML', odcInstallation: 'OWASP Dependency-Check Vulnerabilities'
             }
         }
     }
