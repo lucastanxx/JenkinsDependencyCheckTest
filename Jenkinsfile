@@ -1,8 +1,5 @@
 pipeline {
     agent any
-    tools {
-        dependencyCheck '/var/jenkins_home/tools/org.jenkinsci.plugins.DependencyCheck.tools.DependencyCheckInstallation/OWASP_Dependency-Check_Vulnerabilities/dependency-check/bin/dependency-check.sh'
-    }
     stages {
         stage('Checkout SCM') {
             steps {
